@@ -3,7 +3,7 @@ const chart = Highcharts.chart('container', {
         type: 'column'
     },
     title: {
-        text: 'Grafico de suma de los indicadores'
+        text: 'Grafico suma Indicador UF'
     },
     subtitle: {
         text: 'Source: ' +

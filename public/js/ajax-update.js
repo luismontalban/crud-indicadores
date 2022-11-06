@@ -26,7 +26,7 @@ Jquery(document).ready(function(){
         url: $(this).attr("action"),
         data: indicador,
         success: function(data) {
-            console.log(data);
+            console.log("Ok");
 
         },
         error: function() {

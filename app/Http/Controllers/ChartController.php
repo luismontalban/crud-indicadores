@@ -24,7 +24,7 @@ public function indicadoresJson(Request $request){
 
         $series = [];
 
-        $series1 ['name'] = 'Indicadores';
+        $series1 ['name'] = 'Indicador UF';
         $series1 ['data'] = $indicadores->pluck('sum');
 
         $series[] = $series1;

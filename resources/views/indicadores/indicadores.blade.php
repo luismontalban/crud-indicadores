@@ -47,15 +47,15 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($indicadores as $indicador)
+  @foreach($indicador as $uf)
     <tr>
-      <td>{{$indicador->nombreIndicador}}</td>
-      <td>{{$indicador->codigoIndicador}}</td>
-      <td>{{$indicador->unidadMedidaIndicador}}</td>
-      <td>{{$indicador->valorIndicador}}</td>
-      <td>{{$indicador->fechaIndicador}}</td>
-      <td><a href="{{ route('indi.edit',$indicador->id)}}" class="btn btn-warning">Editar</a></td>
-      <td><a href="{{ route('indi.delete',$indicador->id)}}" id="btn-delete" class="btn btn-danger">Eliminar</a></td>
+      <td>{{$uf->nombreIndicador}}</td>
+      <td>{{$uf->codigoIndicador}}</td>
+      <td>{{$uf->unidadMedidaIndicador}}</td>
+      <td>{{$uf->valorIndicador}}</td>
+      <td>{{$uf->fechaIndicador}}</td>
+      <td><a href="{{ route('indi.edit',$uf->id)}}" class="btn btn-warning">Editar</a></td>
+      <td><a href="{{ route('indi.delete',$uf->id)}}" id="btn-delete" class="btn btn-danger">Eliminar</a></td>
     </tr>
     @endforeach
   </tbody>
@@ -64,7 +64,7 @@
 
 {{-- Pagination --}}
         <div class="d-flex justify-content-center">
-            {!! $indicadores->links() !!}
+            {!! $indicador->links() !!}
         </div>
 
 

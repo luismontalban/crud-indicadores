@@ -28,7 +28,7 @@ $(document).ready(function(){
         data: indicador,
         beforeSend: function() {
             console.log("Enviando...");
-            $(form).trigger("reset")
+            $(form).trigger("reset");
         },
         success: function(response) {
             console.log(response);

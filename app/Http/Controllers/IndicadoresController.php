@@ -15,9 +15,9 @@ class IndicadoresController extends Controller
 
     public function index() {
 
-        //$indicadores = DB::select('select nombreIndicador, codigoIndicador, unidadMedidaIndicador, valorIndicador, fechaIndicador from indicadores;');
-        $indicadores= Indicadores::paginate(8);
-        return view('indicadores.indicadores',  compact('indicadores'));
+
+        $indicador= Indicadores::orderBy('fechaIndicador', 'asc')->paginate(8);
+        return view('indicadores.indicadores',  compact('indicador'));
     }
 
 
@@ -42,13 +42,11 @@ class IndicadoresController extends Controller
 
     public function edit($id) {
 
-        $indicadores = DB::table('indicadores')->where('id', $id)->first();
+        $indicador = DB::table('indicadores')->where('id', $id)->first();
 
-        //PASARLE A LA VISTA EL DATO
 
-        return view('indicadores.edit', [
-            'indicadores' => $indicadores
-        ]);
+
+        return view('indicadores.edit', ['indicador' => $indicador]);
     }
 
     public function update(Request $request) {
@@ -72,7 +70,7 @@ class IndicadoresController extends Controller
     }
 
     public function delete($id) {
-        $indicadores = DB::table('indicadores')->where('id', $id)->delete();
+        $indicador = DB::table('indicadores')->where('id', $id)->delete();
         return redirect()->route('index');
     }
 

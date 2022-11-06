@@ -16,7 +16,7 @@ $(document).ready(function(){
         type: 'POST',
         url: '/eliminar/' + id,
         success: function(data) {
-            console.log(data);
+            console.log("Ok");
 
         },
         error: function() {
