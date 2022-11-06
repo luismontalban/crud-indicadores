@@ -46,12 +46,12 @@
     <div class="row justify-content-center">
         <div class="col-lg-3 col-sm-6">
             <label for="startDate">Desde</label>
-            <input name="startDate" id="startDate" class="form-control" type="date" />
+            <input name="startDate" id="startDate" value="2021-01-04" class="form-control" type="date" />
             <span id="startDateSelected"></span>
         </div>
         <div class="col-lg-3 col-sm-6">
             <label for="endDate">Hasta</label>
-            <input name="endDate" id="endDate" class="form-control" type="date" />
+            <input name="endDate" id="endDate" value="2021-01-10" class="form-control" type="date" />
             <span id="endDateSelected"></span>
         </div>
     </div>
@@ -82,46 +82,8 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
-<script>
-// Data retrieved from https://netmarketshare.com
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Indicadores'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-            }
-        }
-    },
-    series: [{
-        name: 'Porcentaje',
-        colorByPoint: true,
-        data: <?=$data2?>
-    }]
-});
 
-
-</script>
-
+<script src="{{ asset('js/indicadores.js') }}"></script>
 
 
   </body>

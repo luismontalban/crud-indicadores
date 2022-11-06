@@ -31,8 +31,8 @@ Route::get('/eliminar/{id}', [IndicadoresController::class, 'delete'])->name('in
 Route::post('/indicadores/update', [IndicadoresController::class, 'update']);
 
 
-Route::get('/grafico', [ChartController::class, 'index'])->name('grafico');
-
-
 Route::get('/grafico/data', [ChartController::class, 'indicadoresJson'])->name('graficodata');
 
+
+
+Route::get('/grafico', [ChartController::class, 'chart'])->name('grafico');
