@@ -2,9 +2,9 @@ $(document).ready(function(){
 
     $("#formulario").submit(function(e) {
 
-    let form = '#formulario';
+    const form = '#formulario';
     e.preventDefault();
-    let indicador = {
+    const indicador = {
         nombreIndicador: $('input[name="nombreIndicador"]').val(),
         codigoIndicador: $('input[name="codigoIndicador"]').val(),
         unidadMedidaIndicador: $('input[name="unidadMedidaIndicador"]').val(),
@@ -27,11 +27,10 @@ $(document).ready(function(){
         url: $(this).attr("action"),
         data: indicador,
         beforeSend: function() {
-            console.log("Enviando...");
-            $(form).trigger("reset");
+            alert('Registro creado!');
         },
         success: function(response) {
-            console.log('Ok');
+            $(form).trigger("reset");
 
         },
         error: function() {

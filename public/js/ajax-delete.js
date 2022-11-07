@@ -3,7 +3,7 @@ $(document).ready(function(){
     $("#btn-delete").submit(function(e) {
 
     e.preventDefault();
-    let id = $(this).val();
+    const id = $(this).val();
 
     $.ajaxSetup({
             headers: {

@@ -12,6 +12,12 @@ class IndicadoresController extends Controller
 {
 
 
+    public function home() {
+
+
+
+        return view('welcome');
+    }
 
     public function index() {
 
@@ -36,6 +42,7 @@ class IndicadoresController extends Controller
 
 
         $indicador->save();
+
 
 
     }

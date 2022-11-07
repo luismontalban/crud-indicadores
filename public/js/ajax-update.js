@@ -3,7 +3,7 @@ Jquery(document).ready(function(){
     $("#formulario-edit").submit(function(e) {
 
     e.preventDefault();
-    let indicador = {
+    const indicador = {
         nombreIndicador: Jquery('#nombreIndicador').val(),
         codigoIndicador: Jquery('#codigoIndicador').val(),
         unidadMedidaIndicador: Jquery('#unidadMedidaIndicador').val(),

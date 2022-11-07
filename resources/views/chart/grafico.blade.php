@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <label for="endDate">Hasta</label>
-                <input name="endDate" id="endDate" value="2021-01-10" class="form-control" type="date" />
+                <input name="endDate" id="endDate" value="2021-06-10" class="form-control" type="date" />
                 <span id="endDateSelected"></span>
             </div>
         </div>
