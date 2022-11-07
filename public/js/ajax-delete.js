@@ -15,7 +15,8 @@ $(document).ready(function(){
     $.ajax({
         type: 'POST',
         url: '/eliminar/' + id,
-        success: function(data) {
+        success: function(response) {
+            console.log(response);
             console.log("Ok");
 
         },

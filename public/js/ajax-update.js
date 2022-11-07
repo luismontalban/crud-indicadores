@@ -25,7 +25,8 @@ Jquery(document).ready(function(){
         type: 'POST',
         url: $(this).attr("action"),
         data: indicador,
-        success: function(data) {
+        success: function(response) {
+            console.log(response);
             console.log("Ok");
 
         },
