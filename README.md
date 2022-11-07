@@ -1,3 +1,3 @@
-# CRUD Indicadores en Laravel, MySQL y Ajax
+# CRUD Indicador UF en Laravel 9, MySQL y Ajax
 
 Tarea

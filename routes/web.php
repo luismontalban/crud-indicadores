@@ -17,7 +17,7 @@ use App\Http\Controllers\ChartController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/indicadores/list', [IndicadoresController::class, 'index'])->name('index');
 

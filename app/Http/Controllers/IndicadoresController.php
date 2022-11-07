@@ -36,6 +36,8 @@ class IndicadoresController extends Controller
 
 
         $indicador->save();
+
+
     }
 
 

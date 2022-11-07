@@ -31,7 +31,7 @@ $(document).ready(function(){
             $(form).trigger("reset");
         },
         success: function(response) {
-            console.log(response);
+            console.log('Ok');
 
         },
         error: function() {
