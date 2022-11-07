@@ -7,29 +7,18 @@ use Illuminate\Http\Request;
 use App\Models\Indicadores;
 
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class IndicadoresController extends Controller
 {
-
-
-    public function home() {
-
-
-
-        return view('welcome');
+    public function index()
+    {
+        $indicador = Indicadores::orderBy('fechaIndicador', 'asc')->paginate(8);
+        return view('indicadores.indicadores', compact('indicador'));
     }
-
-    public function index() {
-
-
-        $indicador= Indicadores::orderBy('fechaIndicador', 'asc')->paginate(8);
-        return view('indicadores.indicadores',  compact('indicador'));
-    }
-
 
     public function create(Request $request)
     {
-
         $indicador = new Indicadores();
 
         $indicador->nombreIndicador = $request->nombreIndicador;
@@ -40,47 +29,43 @@ class IndicadoresController extends Controller
         $indicador->tiempoIndicador = $request->tiempoIndicador;
         $indicador->origenIndicador = $request->origenIndicador;
 
-
         $indicador->save();
-
-
-
     }
 
-
-
-    public function edit($id) {
-
-        $indicador = DB::table('indicadores')->where('id', $id)->first();
-
-
+    public function edit($id)
+    {
+        $indicador = DB::table('indicadores')
+            ->where('id', $id)
+            ->first();
 
         return view('indicadores.edit', ['indicador' => $indicador]);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $id = $request->input('id');
         $indicadores = DB::table('indicadores')
-                ->where('id', $id)
-                ->update(array(
-            'nombreIndicador' => $request->input('nombreIndicador'),
-            'codigoIndicador' => $request->input('codigoIndicador'),
-            'unidadMedidaIndicador' => $request->input('unidadMedidaIndicador'),
-            'valorIndicador' => $request->input('valorIndicador'),
-            'fechaIndicador' => $request->input('fechaIndicador'),
-            'tiempoIndicador' => $request->input('tiempoIndicador'),
-            'origenIndicador' => $request->input('origenIndicador')
-
-        ));
-
-
+            ->where('id', $id)
+            ->update([
+                'nombreIndicador' => $request->input('nombreIndicador'),
+                'codigoIndicador' => $request->input('codigoIndicador'),
+                'unidadMedidaIndicador' => $request->input(
+                    'unidadMedidaIndicador'
+                ),
+                'valorIndicador' => $request->input('valorIndicador'),
+                'fechaIndicador' => $request->input('fechaIndicador'),
+                'tiempoIndicador' => $request->input('tiempoIndicador'),
+                'origenIndicador' => $request->input('origenIndicador'),
+            ]);
 
         return redirect()->route('index');
     }
 
-    public function delete($id) {
-        $indicador = DB::table('indicadores')->where('id', $id)->delete();
+    public function delete($id)
+    {
+        $indicador = DB::table('indicadores')
+            ->where('id', $id)
+            ->delete();
         return redirect()->route('index');
     }
-
 }

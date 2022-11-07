@@ -4,8 +4,14 @@
 
 @section('content')
 
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 
 <div class="card">
+
 
 
     <h5 class="text-center">Formulario Indicador</h5>

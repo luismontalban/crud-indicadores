@@ -27,9 +27,10 @@ $(document).ready(function(){
         url: $(this).attr("action"),
         data: indicador,
         beforeSend: function() {
-            alert('Registro creado!');
+            console.log("OK");
         },
         success: function(response) {
+            console.log(response);
             $(form).trigger("reset");
 
         },
